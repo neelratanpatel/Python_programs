@@ -10,7 +10,7 @@
 # This is the python first task Product Collections
  
 # creating a list and assigning values. 
-products = list(('Laptop','Phone','Keyboard','Mouse','Monitor','Key Chain')) 
+products = list(('Laptop','Phone','Keyboard','Mouse','Monitor','Key_chain')) 
  
 # creating a tuple and storing values. 
  
@@ -95,12 +95,51 @@ print(len(catetgories_set))
 
 # This is the python Third task Product Pricing
 
-# creating a dictionary which name is price_dict with product name and values
+# 3.1 creating a dictionary which name is price_dict with product name and values
 
-price_dict = dict(laptop=500000,phone=50000,keyboard=30000,mouse=15000,key_chain=500,key=5000,mt_15=300000)
+price_dict = dict(Laptop=500000,Phone=50000,Keyboard=30000,Mouse=15000,Monitor=20000,Key_chain=500,Key=5000,Mt_15=300000)
 
-# Adding a new product in the dictionary
+# 3.2.a Adding a new product in the dictionary
 
 price_dict['bmw_m5'] = 23000000
 
-print(price_dict)
+# 3.2.b Removing a existing product in the dictionary 
+
+item_for_remove = 'Laptop'
+
+if item_for_remove in price_dict:
+    price_dict.pop(item_for_remove)
+else:
+    print(item_for_remove,"is not present in the list")
+
+# 3.3 Print the average price of all products (use only dictionary operations and basic arithmetic)
+
+total_sum = 0;
+total_item=0
+for value in price_dict.values():
+    total_item=total_item+1
+    total_sum+=value
+
+print(total_sum/total_item)
+
+
+
+#####    ###    ####   #   #                     # 
+  #     #   #  #       #  #                   #  # 
+  #     #####   ###    ###       ####        # # # # #
+  #     #   #      #   #  #                      # 
+  #     #   #  ####    #   #                     #
+
+
+# 4.1 Using the products list and price_dict, create a list of tuples named catalog where each tuple (product_name,price and category).
+
+tup1 = tuple(products)
+tup2 = tuple(price_dict.values())
+tup3 = tuple(catetgories)
+
+catalog = tup1 + tup2 + tup3
+print(catalog)
+
+# print(products)    
+# print(price_dict)
+# print(catetgories)
